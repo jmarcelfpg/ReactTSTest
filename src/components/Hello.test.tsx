@@ -1,6 +1,9 @@
 import * as React from 'react';
 import * as enzyme from 'enzyme';
+import * as adapter from 'enzyme-adapter-react-16';
 import Hello from './Hello';
+  
+enzyme.configure({adapter: new adapter()});
 
 it('renders the correct text when no enthusiasm level is given', () => {
     const hello = enzyme.shallow(<Hello name="Daniel" />);
